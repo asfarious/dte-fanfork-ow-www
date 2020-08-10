@@ -1,0 +1,152 @@
+# Supported types:
+# character, spouse, rivals, friends, liege_titles, vassal_titles, realm_titles, realm_characters, realm_characters_plus, independent_rulers
+
+###############
+# AMBITIONS
+###############
+
+# Strengthen Religion
+obj_strengthen_religion = {
+	type = character
+
+	potential = {
+		has_dlc = "Jade Dragon"
+		independent = yes
+		is_landed = yes
+		higher_tier_than = BARON
+		NOT = { religion_authority >= 0.30 }
+		is_nomadic = no
+		is_adult = yes
+		has_secret_religion = no
+		is_devil_worshiper_trigger = no
+		is_inaccessible_trigger = no
+		is_incapable = no
+		NOT = { has_character_flag = strengthened_religion }
+	}
+
+	creation_effect = {
+		change_variable = {
+			which = strengthen_religion
+			value = 0
+		}
+
+		random_list = {
+			150 = { # No Opportunity
+				set_character_flag = had_ambition_opportunity_chance
+			}
+
+			50 = { # Liberate Opportunity
+				character_event = {
+					id = JD.2100
+					days = 14
+					random = 14
+
+				}
+
+				set_character_flag = had_ambition_opportunity_chance
+
+				trigger = {
+					mercenary = no
+					pacifist = no
+
+					NOR = {
+						trait = cynical
+						has_character_flag = had_liberate_opportunity
+						has_character_flag = had_ambition_opportunity_chance
+					}
+
+					any_neighbor_independent_ruler = {								# You need to neighbour a ruler
+						NOT = { religion = ROOT }                                   # ... who is NOT of your religion
+
+						any_realm_province = {                                      # ... and has any province in their realm...
+							religion = ROOT                                         # ... that is of your religion...
+
+							kingdom = {                                             # ... and a De Jure part of a Kingdom, created or not...
+								any_de_jure_vassal_title = {                        # ... which contains any title...
+									tier = COUNT                                    # ... of Count tier...
+
+									holder_scope = {                                # ... that is in the same realm as the Top Liege of the neighbor
+										same_realm = PREVPREVPREVPREV               # ... Province's holder...
+									}
+
+									location = {                                    # ... and where the associated province...
+										any_neighbor_province = {                   # ... has a neighboring province...
+											holder_scope = {                        # ... whose holder...
+												top_liege = {                       # ... has a Top Liege...
+													character = ROOT                # ... who is you!
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				mult_modifier = {
+					trait = zealous
+					factor = 5
+				}
+				mult_modifier = {
+					has_focus = focus_theology
+					factor = 2
+				}
+			}
+		}
+	}
+
+	success = {
+		custom_tooltip = {
+			text = tooltip_obj_strengthen_religion
+
+			check_variable = {
+				which = strengthen_religion
+				value = 3
+			}
+		}
+	}
+
+	effect = {
+		piety = 100
+		religion_authority = {
+			modifier = strengthened_religion
+			years = 50
+		}
+		add_character_modifier = {
+			modifier = strengthen_religion_ambition
+			years = 30
+		}
+		set_character_flag = strengthened_religion
+	}
+
+	abort = {
+		religion_authority >= 0.50
+	}
+
+	chance = {
+		factor = 50
+
+		modifier = {
+			factor = 0.1
+			lower_tier_than = KING
+		}
+		modifier = {
+			factor = 10.0
+			OR = {
+				trait = detached_priest
+				trait = martial_cleric
+				trait = scholarly_theologian
+				trait = mastermind_theologian
+			}
+		}
+		modifier = {
+			factor = 10.0
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.01
+			trait = cynical
+		}
+	}
+}

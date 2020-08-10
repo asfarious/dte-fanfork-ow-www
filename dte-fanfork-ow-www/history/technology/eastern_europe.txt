@@ -1,0 +1,135 @@
+
+#EASTERN EUROPE
+
+technology = {
+	titles = {
+		# Poland
+		d_mazovia
+		d_greater_poland
+		d_silesia
+		d_lesser_poland
+		d_kuyavia
+
+		# Pomerania
+		d_mecklemburg
+		d_rugen
+		d_pommerania
+		d_pomeralia
+		d_brandenburg
+
+		# Lithuania
+		d_prussia
+		d_lithuanians
+		d_courland
+		d_samogitia
+		d_latgale
+		d_livonia
+		d_yatviags
+
+		# Rus - without d_beloozero
+		d_novgorod
+		d_pskov
+
+		# Vladimir
+		d_vladimir
+		d_moskva
+		d_yaroslavl
+		d_rostov
+		d_tver
+
+		# Galicia-Volhania
+		d_volhynia
+		d_galich
+		d_cherven_cities
+
+		# Ruthenia
+		d_kiev
+		d_turov
+		d_minsk
+		d_polotsk
+		d_smolensk
+		d_pereyaslavl
+
+		# Chernigov
+		d_chernigov
+		d_novgorod-seversk
+		d_ryazan
+		d_murom
+		d_karachev
+		d_novosil
+
+		# Dacia
+		d_moldau
+
+		# Hungary
+		d_pecs
+		d_esztergom
+		d_nyitra
+		d_ungvar
+		d_pest
+		d_transylvania
+		d_temes
+
+		# Volga-Bulgaria
+		d_maris
+		d_mordvins
+
+		# Estonia
+		d_sakala
+	}
+
+	769 = {
+		military = 0.2
+		economy = 0.1
+		culture = 0.15
+
+	}
+
+	1337 = {
+		military = 3.5
+		economy = 3.5
+		culture = 3.5
+	}
+}
+
+# Bulgaria and Balkans
+technology = {
+	titles = {
+		# Dacia - without d_moldau
+		d_wallachia
+		d_oltenia
+		d_bessarabia
+
+		# Bulgaria
+		d_vidin
+
+		# Serbia
+		d_rashka
+		d_dioclea
+
+		# Croatia
+		d_slavonia
+		d_syrmia
+		d_bosnia
+		d_croatia
+		d_dalmatia
+	}
+
+	769 = {
+		military = 0.6
+		economy = 0.6
+		culture = 0.6
+		TECH_RECRUITMENT = 2
+		TECH_CASTLE_CONSTRUCTION = 2
+		TECH_CITY_CONSTRUCTION = 2
+		TECH_CONSTRUCTION = 2
+		TECH_MAJESTY = 1
+		TECH_LEGALISM = 1
+	}
+
+	1337 = {
+		military = 4
+		economy = 4
+		culture = 4
+	}
+}

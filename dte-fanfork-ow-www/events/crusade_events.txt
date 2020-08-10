@@ -1,0 +1,1875 @@
+###########################################
+#
+# Crusade Events
+#
+# ID 8300-8499 is reserved
+#
+###########################################
+
+# Arriving for the Crusade/Jihad/Great Holy War
+character_event = {
+	id = 8300
+	desc = EVTDESC8300
+
+	picture = {
+		trigger = { religion_group = christian }
+		picture = GFX_evt_crusaders
+	}
+
+	picture = {
+		trigger = { religion_group = muslim }
+		picture = GFX_evt_moors
+	}
+
+	picture = {
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+		}
+		picture = GFX_evt_battle
+	}
+
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes # on_unit_entering_province, on_command_(sub_)unit
+
+	in_command = yes
+	min_age = 16
+
+	trigger = {
+		OR = {
+			AND = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+
+				crusade_target = {
+					is_located_in = ROOT
+				}
+			}
+
+			any_liege = {
+				religion = ROOT
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+
+				crusade_target = {
+					is_located_in = ROOT
+				}
+			}
+		}
+
+		has_crusade_trait_trigger = no
+	}
+
+	option = {
+		name = EVTOPTA8300
+
+		trigger = { religion_group = christian }
+
+		add_trait = crusader
+	}
+
+	option = {
+		name = EVTOPTA8301
+
+		trigger = { religion_group = muslim }
+
+		add_trait = mujahid
+	}
+
+	option = {
+		name = EVTOPTA8468
+
+		trigger = { religion_openly_norse_or_reformed_trigger = yes }
+
+		add_trait = valhalla_bound
+	}
+
+	option = {
+		name = 8469.a
+
+		trigger = {
+			NOR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_openly_norse_or_reformed_trigger = yes
+			}
+		}
+
+		add_crusade_trait_effect = yes
+	}
+}
+
+# Arriving at the crusade target
+character_event = {
+	id = 8305
+	desc = EVTDESC8305
+	picture = GFX_evt_siege
+	border = GFX_event_normal_frame_war
+
+	religion = catholic
+	in_command = yes
+	min_age = 16
+
+	is_triggered_only = yes # on_unit_entering_province, on_command_(sub_)unit
+
+	trigger = {
+		has_called_crusade = yes
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				religion = catholic
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		crusade_target = {
+			is_located_in = ROOT
+		}
+
+		NOT = { has_character_flag = arrived_at_crusade_target }
+
+		location = {
+			NOT = { owned_by = ROOT }
+		}
+	}
+
+	immediate = {
+		set_character_flag = arrived_at_crusade_target
+	}
+
+	option = {
+		name = EXCELLENT
+
+		prestige = 25
+		piety = 25
+	}
+}
+
+# Pope lifts Excommunication (AI characters only)
+character_event = {
+	id = 8306
+
+	is_triggered_only = yes # on_yearly_pulse
+	hide_window = yes
+
+	religion = catholic
+	only_men = yes
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		controls_religion = yes # Pope
+		has_called_crusade = yes
+	}
+
+	immediate = {
+		any_independent_ruler = {
+			if = {
+				limit = {
+					excommunicated_for = ROOT
+					ai = yes
+
+					any_war = {
+						OR = {
+							using_cb = crusade
+							using_cb = new_crusade
+						}
+					}
+				}
+
+				set_character_flag = offered_revoked_excommunication
+
+				letter_event = {
+					id = 8467
+					days = 1
+				}
+			}
+
+			any_realm_lord = {
+				limit = {
+					excommunicated_for = ROOT
+					ai = yes
+
+					any_war = {
+						OR = {
+							using_cb = crusade
+							using_cb = new_crusade
+						}
+					}
+				}
+
+				set_character_flag = offered_revoked_excommunication
+
+				letter_event = {
+					id = 8467
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+### On actions events ###
+
+# Character becomes zealous
+# on_battle_won
+# FROM = opposing army's owner
+character_event = {
+	id = 8310
+	desc = EVTDESC8310
+	picture = GFX_evt_knight_kneeling
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	hide_from = yes
+
+	religion = catholic
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		has_called_crusade = yes
+
+		NOR = {
+			trait = zealous
+			trait = cynical
+		}
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				religion = catholic
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		crusade_target = {
+			is_located_in = ROOT
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+
+		add_trait = zealous
+	}
+}
+
+# Character becomes cynical
+# on_battle_lost
+# FROM = opposing army's owner
+character_event = {
+	id = 8320
+	desc = EVTDESC8320
+	picture = GFX_evt_pale_rider
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	religion = catholic
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		has_called_crusade = yes
+
+		NOR = {
+			trait = cynical
+			trait = zealous
+		}
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				religion = catholic
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		crusade_target = {
+			is_located_in = ROOT
+		}
+	}
+
+	option = {
+		name = EVTOPTA8320
+
+		add_trait = cynical
+	}
+}
+
+# Conquers the crusade target
+# on_siege_won_leader
+# FROM = barony won
+character_event = {
+	id = 8330
+	desc = EVTDESC8330
+	picture = GFX_evt_siege
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_called_crusade = yes
+		FROM = { is_capital = yes }
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		crusade_target = {
+			de_jure_vassal_or_below = FROM
+		}
+	}
+
+	option = {
+		name = EVTOPTA8330
+
+		prestige = 100
+		piety = 100
+
+		set_character_flag = captures_crusade_target
+
+		if = {
+			limit = { independent = no }
+
+			# Inform liege
+			if = {
+				limit = {
+					liege = {
+						independent = no # isn't top liege
+
+						any_war = {
+							OR = {
+								using_cb = crusade
+								using_cb = new_crusade
+							}
+						}
+					}
+				}
+
+				liege = {
+					letter_event = {
+						id = 8331
+						days = 1
+					}
+				}
+			}
+
+			# Inform top liege
+			if = {
+				limit = {
+					top_liege = {
+						any_war = {
+							OR = {
+								using_cb = crusade
+								using_cb = new_crusade
+							}
+						}
+					}
+				}
+
+				top_liege = {
+					letter_event = {
+						id = 8331
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+# Inform liege of capturing the crusade target
+letter_event = {
+	id = 8331
+	desc = EVTDESC8331
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+
+		if = {
+			limit = { NOT = { has_character_flag = captures_crusade_target } }
+
+			prestige = 25
+			piety = 25
+		}
+
+		set_character_flag = captures_crusade_target
+	}
+}
+
+
+# Finds the Spear of Destiny / Holy Lance
+# on_siege_won_leader
+# FROM = barony won
+character_event = {
+	id = 8340
+	desc = EVTDESC8340
+	picture = GFX_evt_siege
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	religion = catholic
+
+	trigger = {
+		FROM = { title = b_jerusalem }
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		NOR = {
+			has_global_flag = found_the_holy_lance
+
+			has_alternate_start_parameter = {
+				key = religion_names
+				value = random
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = found_the_holy_lance
+	}
+
+	option = {
+		name = EVTOPTA8340
+
+		prestige = 100
+
+		if = {
+			limit = { has_dlc = Mystics }
+
+			add_artifact = spear_of_destiny
+
+			new_artifact = {
+				set_creation_date = 1.1.1
+			}
+		}
+	}
+}
+
+
+# Finds the Holy Grail
+# on_siege_won_leader
+# FROM = barony won
+character_event = {
+	id = 8342
+	desc = EVTDESC8342
+	picture = GFX_evt_siege
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	religion = catholic
+
+	trigger = {
+		FROM = { title = b_syrcaesarea }
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		NOT = {
+			has_global_flag = found_the_holy_grail
+
+			has_alternate_start_parameter = {
+				key = religion_names
+				value = random
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = found_the_holy_grail
+	}
+
+	option = {
+		name = EVTOPTA8342
+
+		prestige = 200
+
+		if = {
+			limit = { has_dlc = Mystics }
+
+			if = {
+				limit = {
+					has_game_rule = {
+						name = supernatural_events
+						value = off
+					}
+				}
+
+				add_artifact = holy_chalice
+			}
+
+			else = {
+				add_artifact = holy_grail
+			}
+
+			new_artifact = {
+				set_creation_date = 1.1.1
+			}
+		}
+	}
+}
+
+
+# Sack of Jerusalem
+# on_siege_won_leader
+# FROM = barony won
+character_event = {
+	id = 8345
+	desc = EVTDESC8345
+	picture = GFX_evt_siege
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	religion = catholic
+
+	trigger = {
+		FROM = { title = b_jerusalem }
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8345
+		prestige = 50
+	}
+}
+
+
+# Loses the crusade target's capital
+# on_siege_lost_leader
+# FROM = barony lost
+character_event = {
+	id = 8350
+	desc = EVTDESC8350
+	picture = GFX_evt_siege
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	trigger = {
+		FROM = { is_capital = yes }
+
+		OR = {
+			any_war = {
+				OR = {
+					using_cb = crusade
+					using_cb = new_crusade
+				}
+			}
+
+			any_liege = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+		}
+
+		crusade_target = {
+			de_jure_vassal_or_below = FROM
+		}
+	}
+
+	option = {
+		name = EVTOPTA8350
+
+		prestige = -50
+		piety = -50
+
+		if = {
+			limit = { independent = no }
+
+			# Inform liege
+			if = {
+				limit = {
+					liege = {
+						independent = no # isn't top liege
+
+						any_war = {
+							OR = {
+								using_cb = crusade
+								using_cb = new_crusade
+							}
+						}
+					}
+				}
+
+				liege = {
+					letter_event = {
+						id = 8351
+						days = 1
+					}
+				}
+			}
+
+			# Inform top liege
+			if = {
+				limit = {
+					top_liege = {
+						any_war = {
+							OR = {
+								using_cb = crusade
+								using_cb = new_crusade
+							}
+						}
+					}
+				}
+
+				top_liege = {
+					letter_event = {
+						id = 8351
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+# Inform liege of losing the crusade target
+letter_event = {
+	id = 8351
+	desc = EVTDESC8351
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8351
+
+		prestige = -25
+		piety = -25
+	}
+}
+
+
+########################################
+# Disappointment of not participating
+########################################
+
+### Pope Disappointed ###
+
+# Pope is concerned that an independent ruler is not participating in crusade
+character_event = {
+	id = 8400
+	desc = EVTDESC8400
+	picture = GFX_evt_pope
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	religion = catholic
+	only_men = yes
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+
+	is_triggered_only = yes # on_yearly_pulse
+
+	trigger = {
+		controls_religion = yes # Pope
+		is_preparing_crusade = yes
+
+		any_independent_ruler = {
+			religion = catholic
+			rightful_religious_head = ROOT # filters out rulers with antipopes
+			has_pledged_crusade_participation = no
+			mercenary = no
+
+			NOT = {
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+
+			crusade_target = {
+				holder_scope = {
+					NOT = { reverse_has_truce = PREVPREV }
+				}
+			}
+
+			NOR = {
+				excommunicated_for = ROOT
+
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					name = opinion_not_participating_in_crusade_emperor
+				}
+
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					name = opinion_not_participating_in_crusade_king
+				}
+
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					name = opinion_not_participating_in_crusade_duke
+				}
+
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					name = opinion_not_participating_in_crusade_count
+				}
+			}
+
+			NOT = {
+				any_realm_province = {
+					any_neighbor_province = {
+						is_land = yes
+						NOT = { religion_group = christian }
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8400
+
+		random_independent_ruler = {
+			limit = {
+				religion = catholic
+				rightful_religious_head = ROOT # filters out rulers with antipopes
+				has_pledged_crusade_participation = no
+				mercenary = no
+
+				NOT = {
+					any_war = {
+						OR = {
+							using_cb = crusade
+							using_cb = new_crusade
+						}
+					}
+				}
+
+				crusade_target = {
+					holder_scope = {
+						NOT = { reverse_has_truce = PREVPREV }
+					}
+				}
+
+				NOR = {
+					excommunicated_for = ROOT
+
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						name = opinion_not_participating_in_crusade_emperor
+					}
+
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						name = opinion_not_participating_in_crusade_king
+					}
+
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						name = opinion_not_participating_in_crusade_duke
+					}
+
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						name = opinion_not_participating_in_crusade_count
+					}
+
+					any_realm_province = {
+						any_neighbor_province = {
+							has_owner = yes
+							NOT = { religion_group = christian }
+						}
+					}
+				}
+			}
+
+			letter_event = {
+				id = 8405
+				days = 1
+			}
+		}
+	}
+}
+
+# Pope shares his concerns
+letter_event = {
+	id = 8405
+	desc = EVTDESC8405
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8405
+
+		trigger = { real_tier = EMPEROR }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_emperor
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8405
+
+		trigger = { real_tier = KING }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_king
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8405
+
+		trigger = { real_tier = DUKE }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_duke
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8405
+
+		trigger = { real_tier = COUNT }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_count
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB8405
+
+		set_character_flag = reminded_about_crusade
+		pledge_crusade_participation = yes
+	}
+}
+
+# Pope is disappointed in the rulers decision to not participate in the crusade
+character_event = {
+	id = 8410
+	desc = EVTDESC8410
+	picture = GFX_evt_pope
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes # on_yearly_pulse
+
+	only_playable = yes
+	religion = catholic
+	only_men = yes
+	only_capable = yes
+	min_age = 16
+	prisoner = no
+
+	trigger = {
+		controls_religion = yes
+
+		any_independent_ruler = {
+			religion = catholic
+			rightful_religious_head = ROOT # filters out rulers with antipopes
+
+			had_character_flag = {
+				flag = reminded_about_crusade
+				months >= 1
+			}
+
+			NOR = {
+				excommunicated_for = ROOT
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+			}
+
+			crusade_target = {
+				holder_scope = {
+					NOT = { reverse_has_truce = PREVPREV }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8410
+
+		random_independent_ruler = {
+			limit = {
+				religion = catholic
+				rightful_religious_head = ROOT # filters out rulers with antipopes
+
+				had_character_flag = {
+					flag = reminded_about_crusade
+					months >= 1
+				}
+
+				NOR = {
+					excommunicated_for = ROOT
+
+					any_war = {
+						OR = {
+							using_cb = crusade
+							using_cb = new_crusade
+						}
+					}
+				}
+
+				crusade_target = {
+					holder_scope = {
+						NOT = { reverse_has_truce = PREVPREV }
+					}
+				}
+			}
+
+			clr_character_flag = reminded_about_crusade
+
+			letter_event = {
+				id = 8415
+				days = 1
+			}
+		}
+	}
+}
+
+# Pope shares his disappointment
+letter_event = {
+	id = 8415
+	desc = EVTDESC8415
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8415
+
+		trigger = { real_tier = EMPEROR }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_emperor
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8415
+
+		trigger = { real_tier = KING }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_king
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8415
+
+		trigger = { real_tier = DUKE }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_duke
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA8415
+
+		trigger = { real_tier = COUNT }
+
+		religion_head = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_count
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+
+### Bishop Disappointed ###
+
+# Bishop is concerned that an independent ruler is not participating in crusade
+character_event = {
+	id = 8420
+	desc = EVTDESC8420
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	only_rulers = yes
+	religion = catholic
+	only_men = yes
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		is_priest = yes
+		is_preparing_crusade = yes
+		independent = no
+		controls_religion = no
+		NOT = { has_character_flag = no_complains_about_not_crusading }
+
+		liege = {
+			independent = yes
+			religion = catholic
+			higher_real_tier_than = COUNT # Exclude small rulers
+			has_pledged_crusade_participation = no
+
+			rightful_religious_head_scope = {
+				controls_religion = yes # doesn't have an antipope
+			}
+
+			prisoner = no
+			is_incapable = no
+
+			NOR = {
+				excommunicated_for = PREV
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+
+					any_attacker = {
+						character = PREVPREV
+					}
+				}
+
+				crusade_target = {
+					holder_scope = {
+						reverse_has_truce = PREVPREV
+					}
+				}
+
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					name = opinion_not_participating_in_crusade_bishop
+				}
+
+				any_realm_province = {
+					any_neighbor_province = {
+						has_owner = yes
+						NOT = { religion_group = christian }
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+
+		mult_modifier = {
+			factor = 0.90
+			trait = detached_priest
+		}
+
+		mult_modifier = {
+			factor = 0.85
+			trait = martial_cleric
+		}
+
+		mult_modifier = {
+			factor = 0.80
+			trait = scholarly_theologian
+		}
+
+		mult_modifier = {
+			factor = 0.75
+			trait = mastermind_theologian
+		}
+
+		mult_modifier = {
+			factor = 0.5
+			trait = crusader
+		}
+
+		mult_modifier = {
+			factor = 0.75
+			is_strong_trigger = yes
+		}
+
+		mult_modifier = {
+			factor = 0.75
+			trait = brave
+		}
+
+		mult_modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			trait = content
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			is_weak_trigger = yes
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			trait = craven
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			trait = cynical
+		}
+	}
+
+	option = {
+		name = EVTOPTA8420
+
+		ai_chance = { factor = 100 }
+
+		set_character_flag = bishop_complains_about_not_crusading
+
+		liege = {
+			letter_event = {
+				id = 8425
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB8420
+
+		set_character_flag = no_complains_about_not_crusading
+	}
+}
+
+# Bishop shares his concerns
+letter_event = {
+	id = 8425
+	desc = EVTDESC8425
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8425
+
+		FROM = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_bishop
+				who = ROOT
+				years = 10
+			}
+
+			clr_character_flag = bishop_complains_about_not_crusading
+		}
+	}
+
+	option = {
+		name = EVTOPTB8405
+
+		pledge_crusade_participation = yes
+
+		FROM = {
+			set_character_flag = reminded_about_crusade
+		}
+	}
+}
+
+# Bishop is disappointed in the rulers decision to not participate in the crusade
+character_event = {
+	id = 8430
+	desc = EVTDESC8430
+	picture = GFX_evt_bishop
+	border = GFX_event_normal_frame_religion
+
+	only_rulers = yes
+	has_character_flag = bishop_complains_about_not_crusading
+
+	trigger = {
+		had_character_flag = {
+			flag = reminded_about_crusade
+			months >= 1
+		}
+
+		liege = {
+			has_pledged_crusade_participation = no
+
+			rightful_religious_head_scope = {
+				controls_religion = yes # doesn't have an antipope
+			}
+
+			NOR = {
+				excommunicated_for = PREV
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+				}
+
+				crusade_target = {
+					holder_scope = {
+						reverse_has_truce = PREVPREV
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = EVTOPTA8430
+
+		clr_character_flag = bishop_complains_about_not_crusading
+		clr_character_flag = reminded_about_crusade
+
+		liege = {
+			letter_event = {
+				id = 8435
+				days = 1
+			}
+		}
+	}
+}
+
+# Bishop shares his disappointment
+letter_event = {
+	id = 8435
+	desc = EVTDESC8435
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8435
+
+		FROM = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_emperor
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+
+### Vassal Disappointed ###
+
+# Vassal is concerned that an independent ruler is not participating in crusade
+character_event = {
+	id = 8440
+	desc = EVTDESC8440
+	picture = GFX_evt_emissary
+
+	only_rulers = yes
+	religion = catholic
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		is_preparing_crusade = yes
+		NOT = { has_character_flag = no_complains_about_not_crusading }
+		independent = no
+		controls_religion = no
+
+		liege = {
+			independent = yes
+			religion = catholic
+			higher_real_tier_than = COUNT # Exclude small rulers
+			has_pledged_crusade_participation = no
+
+			rightful_religious_head_scope = {
+				controls_religion = yes # doesn't have an antipope
+			}
+
+			prisoner = no
+			is_incapable = no
+
+			NOR = {
+				excommunicated_for = PREV
+
+				crusade_target = {
+					holder_scope = {
+						reverse_has_truce = PREVPREV
+					}
+				}
+
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					name = opinion_not_participating_in_crusade_vassal
+				}
+
+				any_realm_province = {
+					any_neighbor_province = {
+						has_owner = yes
+						NOT = { religion_group = christian }
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+
+		mult_modifier = {
+			factor = 0.90
+			trait = misguided_warrior
+		}
+
+		mult_modifier = {
+			factor = 0.85
+			trait = tough_soldier
+		}
+
+		mult_modifier = {
+			factor = 0.80
+			trait = skilled_tactician
+		}
+
+		mult_modifier = {
+			factor = 0.75
+			trait = brilliant_strategist
+		}
+
+		mult_modifier = {
+			factor = 0.5
+			trait = crusader
+		}
+
+		mult_modifier = {
+			factor = 0.75
+			is_strong_trigger = yes
+		}
+
+		mult_modifier = {
+			factor = 0.75
+			trait = brave
+		}
+
+		mult_modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			trait = content
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			is_weak_trigger = yes
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			trait = craven
+		}
+
+		mult_modifier = {
+			factor = 1.25
+			trait = cynical
+		}
+	}
+
+	option = {
+		name = EVTOPTA8440
+
+		ai_chance = { factor = 100 }
+
+		set_character_flag = vassal_complains_about_not_crusading
+
+		liege = {
+			letter_event = {
+				id = 8445
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB8440
+
+		set_character_flag = no_complains_about_not_crusading
+	}
+}
+
+# Vassal shares his concerns
+letter_event = {
+	id = 8445
+	desc = EVTDESC8445
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8445
+
+		FROM = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_vassal
+				who = ROOT
+				years = 10
+			}
+
+			clr_character_flag = vassal_complains_about_not_crusading
+		}
+	}
+
+	option = {
+		name = EVTOPTB8405
+
+		pledge_crusade_participation = yes
+
+		FROM = {
+			set_character_flag = reminded_about_crusade
+		}
+	}
+}
+
+# Vassal is disappointed in the rulers decision to not participate in the crusade
+character_event = {
+	id = 8450
+	desc = EVTDESC8450
+	picture = GFX_evt_emissary
+
+	only_rulers = yes
+	has_character_flag = vassal_complains_about_not_crusading
+
+	trigger = {
+		had_character_flag = {
+			flag = reminded_about_crusade
+			months >= 1
+		}
+
+		liege = {
+			has_pledged_crusade_participation = no
+
+			rightful_religious_head_scope = {
+				controls_religion = yes # doesn't have an antipope
+			}
+
+			NOR = {
+				excommunicated_for = ROOT
+
+				any_war = {
+					OR = {
+						using_cb = crusade
+						using_cb = new_crusade
+					}
+
+					any_attacker = {
+						character = PREVPREV
+					}
+				}
+
+				crusade_target = {
+					holder_scope = {
+						reverse_has_truce = PREVPREV
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = EVTOPTA8450
+
+		clr_character_flag = vassal_complains_about_not_crusading
+		clr_character_flag = reminded_about_crusade
+
+		liege = {
+			letter_event = {
+				id = 8455
+				days = 1
+			}
+		}
+	}
+}
+
+# Vassal shares his disappointment
+letter_event = {
+	id = 8455
+	desc = EVTDESC8455
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8455
+
+		FROM = {
+			show_scope_change = no
+
+			opinion = {
+				name = opinion_not_participating_in_crusade_vassal
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+
+########################################
+# Excommunicated (Player only)
+########################################
+
+### Pope Offer to Forgive Excommunicated ###
+
+# Pope finds an excommunicated Catholic
+character_event = {
+	id = 8460
+	desc = EVTDESC8460
+	picture = GFX_evt_pope
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	religion = catholic
+	only_men = yes
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		controls_religion = yes
+		is_preparing_crusade = yes
+
+		any_player = {
+			religion = catholic
+			excommunicated_for = ROOT
+			prisoner = no
+			has_pledged_crusade_participation = no
+
+			NOR = {
+				crusade_target = {
+					holder_scope = {
+						reverse_has_truce = PREVPREV
+					}
+				}
+
+				has_character_flag = offered_revoked_excommunication
+
+				any_realm_province = {
+					any_neighbor_province = {
+						has_owner = yes
+						NOT = { religion_group = christian }
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = EVTOPTA8460
+
+		any_player = {
+			limit = {
+				religion = catholic
+				excommunicated_for = ROOT
+				has_pledged_crusade_participation = no
+				prisoner = no
+
+				NOR = {
+					crusade_target = {
+						holder_scope = {
+							reverse_has_truce = PREVPREV
+						}
+					}
+
+					has_character_flag = offered_revoked_excommunication
+
+					any_realm_province = {
+						any_neighbor_province = {
+							has_owner = yes
+							NOT = { religion_group = christian }
+						}
+					}
+				}
+			}
+
+			set_character_flag = offered_revoked_excommunication
+
+			letter_event = {
+				id = 8465
+				days = 1
+			}
+		}
+	}
+}
+
+# Pope sends his offer
+letter_event = {
+	id = 8465
+	desc = EVTDESC8465
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA8465
+
+		pledge_crusade_participation = yes
+	}
+
+	option = {
+		name = EVTOPTB8465
+	}
+}
+
+# Pope lifts Excommunication
+character_event = {
+	id = 8466
+	desc = EVTDESC8466
+	picture = GFX_evt_pope
+	border = GFX_event_normal_frame_religion
+
+	only_playable = yes
+	religion = catholic
+	only_men = yes
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		controls_religion = yes
+		has_called_crusade = yes
+
+		any_player = {
+			has_character_flag = offered_revoked_excommunication
+			religion = catholic
+			has_pledged_crusade_participation = yes
+			excommunicated_for = ROOT
+			prisoner = no
+
+			crusade_target = {
+				holder_scope = {
+					NOT = { reverse_has_truce = PREVPREV }
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = EVTOPTA8466
+
+		any_player = {
+			limit = {
+				has_character_flag = offered_revoked_excommunication
+				religion = catholic
+				excommunicated_for = ROOT
+				has_pledged_crusade_participation = yes
+				prisoner = no
+
+				crusade_target = {
+					holder_scope = {
+						NOT = { reverse_has_truce = PREVPREV }
+					}
+				}
+			}
+
+			letter_event = {
+				id = 8467
+				days = 1
+			}
+		}
+	}
+}
+
+# Pope sends his offer
+letter_event = {
+	id = 8467
+	desc = EVTDESC8467
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+
+		excommunicate = no
+		clr_character_flag = offered_revoked_excommunication
+	}
+}

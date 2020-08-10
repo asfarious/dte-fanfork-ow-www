@@ -1,0 +1,217 @@
+###################################
+#
+# Zeus
+# Ambition decisions
+#
+###################################
+
+# Written by Markus Olsén
+
+targeted_decisions = {
+
+	request_council_position = {
+		is_high_prio = yes
+		filter = liege
+
+		ai = no
+
+		from_potential = {
+			has_ambition = obj_become_council_member
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+
+				prestige >= 100
+				prisoner = no
+				in_revolt = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+
+				liege = {
+					in_revolt = no
+
+					NOT = {
+						has_opinion_modifier = {
+							who = PREV
+							modifier = requested_council_position
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+
+				prestige = -50
+			}
+
+			custom_tooltip = {
+				text = request_council_position_tooltip
+
+				opinion = {
+					modifier = requested_council_position
+					who = FROM
+					years = 2
+				}
+
+				character_event = {
+					id = ZE.6001
+					days = 3
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ask_for_land = {
+		is_high_prio = yes
+		ai_check_interval = 12
+
+		filter = liege
+		ai_target_filter = liege
+
+		only_playable = yes
+
+		from_potential = {
+			OR = {
+				has_ambition = obj_land_for_son
+				has_ambition = obj_land_for_daughter
+			}
+
+			higher_tier_than = BARON
+		}
+
+		allow = {
+			FROM = {
+				prisoner = no
+				in_revolt = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+
+				liege = {
+					has_regent = no
+					in_revolt = no
+
+					NOT = {
+						has_opinion_modifier = {
+							who = PREV
+							modifier = requested_land
+						}
+					}
+				}
+
+				OR = {
+					custom_tooltip = {
+						text = tooltip_land_for_son
+					}
+
+					custom_tooltip = {
+						text = tooltip_land_for_daugther
+					}
+				}
+			}
+
+			any_demesne_title = {
+				tier = COUNT
+				can_be_given_away = yes
+
+				location = {
+					show_scope_change = no
+
+					is_capital = no
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+
+				prestige = -20
+			}
+
+			custom_tooltip = {
+				text = ask_for_land_tooltip
+
+				opinion = {
+					modifier = requested_land
+					who = FROM
+					years = 2
+				}
+
+				character_event = {
+					id = ZE.6012
+					days = 3
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0.1
+
+			mult_modifier = {
+				factor = 2
+				FROM = {
+					trait = proud
+				}
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = {
+					trait = stubborn
+				}
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = {
+					trait = greedy
+				}
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = {
+					trait = ambitious
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = {
+					trait = content
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = {
+					trait = shy
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = {
+					trait = craven
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = {
+					trait = humble
+				}
+			}
+		}
+	}
+
+}
