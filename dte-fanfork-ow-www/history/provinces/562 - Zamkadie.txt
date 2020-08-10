@@ -1,0 +1,14 @@
+# 562 - Zamkadie
+
+# County Title
+title = c_zamkadie
+
+# Settlements
+max_settlements = 2
+b_khimki = tribe
+
+# Misc
+culture = russian
+religion = orthodox
+
+# History

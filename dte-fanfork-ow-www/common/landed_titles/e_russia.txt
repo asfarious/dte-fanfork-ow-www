@@ -1538,52 +1538,6 @@ e_russia = {
 			}
 		}
 
-		d_moskva = {
-			color = { 207 222 123 }
-			color2 = { 255 255 255 }
-
-			capital = 575 # Moskva
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			mordvin = "Mochkava"
-			meshchera = "Mochkava"
-
-			c_moskva = {
-				color = { 220 235 176 }
-				color2 = { 255 255 255 }
-
-				mordvin = "Mochkava"
-				meshchera = "Mochkava"
-
-				b_moskva = {
-					mordvin = "Mochkava"
-					meshchera = "Mochkava"
-				}
-				b_mytishchi = {}
-				b_podolsk = {}
-				b_istra = {}
-				b_lyubertsy = {}
-				b_khimki = {}
-				b_krasnoya = {}
-			}
-
-			c_naro-fominsk = {
-				color = { 210 225 166 }
-				color2 = { 255 255 255 }
-
-				b_naro-fominsk = {}
-				b_lopasnya = {}
-				b_klimovka = {}
-				b_voronovo = {}
-				b_kubinka = {}
-				b_troitsk = {}
-				b_chukovo = {}
-			}
-		}
-
 		d_rostov = {
 			color = { 124 137 89 }
 			color2 = { 255 255 255 }
@@ -1700,20 +1654,6 @@ e_russia = {
 				b_kesova_gora = {}
 				b_goritsy = {}
 				b_ustinovo = {}
-			}
-
-			c_mozhaysk = {
-				color = { 200 225 156 }
-				color2 = { 255 255 255 }
-
-				b_volgamozhaysk = {}
-				b_shakhunya = {}
-				b_yaransk = {}
-				b_vakhtan = {}
-				b_varnavino = {}
-				b_kiknur = {}
-				b_tonshaevo = {}
-				b_uren = {}
 			}
 
 			c_rzheva = {
@@ -1941,6 +1881,120 @@ e_russia = {
 				b_dvinitsa = {}
 				b_motyn = {}
 				b_staroye = {}
+			}
+		}
+	}
+	k_moskva = {
+		color = { 207 222 123 }
+		color2 = { 255 255 255 }
+
+		capital = 575 # Moskva
+
+		slavic_pagan_reformed = 100 # Crusade target weight
+		finnish_pagan_reformed = 250 # Crusade target weight
+		baltic_pagan_reformed = 100 # Crusade target weight
+
+		culture = russian
+	
+		d_moskva = {
+			color = { 207 222 123 }
+			color2 = { 255 255 255 }
+
+			capital = 575 # Moskva
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+#			mordvin = "Mochkava" # NO
+#			meshchera = "Mochkava" # NO
+
+			c_moskva = {
+				color = { 220 235 176 }
+				color2 = { 255 255 255 }
+
+#				mordvin = "Mochkava" # NO
+#				meshchera = "Mochkava" # NO
+
+				b_moskva = {
+#					mordvin = "Mochkava" # NO
+#					meshchera = "Mochkava" # NO
+				}
+
+			}
+			c_ramenki = {
+				color = { 220 218 153 }
+				color2 = { 255 255 255 }
+				
+				b_ramenki = {}
+			}
+			
+			c_zamkadie = {
+				color = { 196 175 125 }
+				color2 = { 255 255 255 }
+				
+				b_khimki = {}
+				b_mytischi = {}
+			}
+		}
+		d_naro-fominsk = {
+			color = { 198 168 68 }
+			color2 = { 255 255 255 }
+
+			capital = 1677 # Naro-Fominsk
+
+			allow = {
+				can_create_duchy = yes
+			}
+			c_naro-fominsk = {
+				color = { 210 225 166 }
+				color2 = { 255 255 255 }
+
+				b_naro-fominsk = {}
+#				b_lopasnya = {}
+#				b_klimovka = {}
+#				b_voronovo = {}
+#				b_kubinka = {}
+#				b_troitsk = {}
+#				b_chukovo = {}
+			}
+			
+			c_mozhaysk = {
+				color = { 200 225 156 }
+				color2 = { 255 255 255 }
+
+				b_volgamozhaysk = {}
+				b_shakhunya = {}
+				b_yaransk = {}
+				b_vakhtan = {}
+				b_varnavino = {}
+				b_kiknur = {}
+				b_tonshaevo = {}
+				b_uren = {}
+			}
+		}
+		d_tinao = {
+			color = { 103 175 125 }
+			color2 = { 255 255 255 }
+
+			capital = 560 # Butovo
+
+			allow = {
+				can_create_duchy = yes
+			}
+			
+			c_butovo = {
+				color = { 103 175 125 }
+				color2 = {255 255 255}
+				
+				b_butovo = {}
+			}
+			
+			c_troitsk = {
+				color = { 159 175 125 }
+				color2 = {255 255 255}
+				
+				b_troitsk = {}
 			}
 		}
 	}

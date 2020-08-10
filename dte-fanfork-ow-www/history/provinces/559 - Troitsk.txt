@@ -1,0 +1,15 @@
+# 559 - Troitsk
+
+# County Title
+title = c_troitsk
+
+# Settlements
+max_settlements = 1
+b_troitsk = tribe
+
+
+# Misc
+culture = russian
+religion = orthodox
+
+# History

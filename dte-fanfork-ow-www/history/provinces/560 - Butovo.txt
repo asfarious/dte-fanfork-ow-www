@@ -1,0 +1,14 @@
+# 560 - Butovo
+
+# County Title
+title = c_butovo
+
+# Settlements
+max_settlements = 1
+b_butovo = tribe
+
+# Misc
+culture = culture
+religion = orthodox
+
+# History

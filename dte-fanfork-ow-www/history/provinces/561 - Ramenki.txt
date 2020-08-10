@@ -1,0 +1,14 @@
+# 561 - Ramenki
+
+# County Title
+title = c_ramenki
+
+# Settlements
+max_settlements = 1
+b_ramenki = tribal
+
+# Misc
+culture = russian
+religion = orthodox
+
+# History

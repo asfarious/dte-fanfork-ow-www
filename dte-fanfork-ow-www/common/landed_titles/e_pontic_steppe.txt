@@ -160,6 +160,20 @@ e_pontic_steppe = {
 				b_ustaksayaskaya = {}
 				b_sulin = {}
 			}
+			
+			c_tmutarakan = {
+				color = { 196 99 162 }
+				color2 = { 255 255 20 }
+
+				b_tmutarakan = {}
+				b_mapa = {}
+				b_taman = {}
+				b_tumnev = {}
+				b_jevlisia = {}
+				b_sujukqale = {}
+				b_bata = {}
+				b_tsemes = {}
+			}			
 		}
 
 		d_caspian_steppe = {
@@ -297,11 +311,11 @@ e_pontic_steppe = {
 		}
 	}
 
-	k_crimea = {
+	k_odessa = {
 		color = { 125 80 18 }
 		color2 = { 255 255 20 }
 
-		capital = 559 # Crimea
+		capital = 1646 # Odessa
 
 		allow = {
 			can_create_kingdom = yes
@@ -319,100 +333,14 @@ e_pontic_steppe = {
 
 		crimean_gothic = "Gothia"
 
-		d_cherson = {
-			color = { 180 180 90 }
-			color2 = { 255 255 20 }
-
-			capital = 560 # Cherson
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			crimean_gothic = "Theodoro"
-
-			c_cherson = {
-				color = { 194 97 160 }
-				color2 = { 255 255 20 }
-
-				b_kherson = {}
-				b_doros = {}
-				b_neapol = {}
-				b_kerkinitis = {}
-				b_cembalo = {}
-				b_charax = {}
-				b_sevastoupolis = {}
-				b_kalamita = {}
-			}
-
-			c_korchev = {
-				color = { 192 95 158 }
-				color2 = { 255 255 20 }
-
-				b_bosphoros = {}
-				b_panticapea = {}
-				b_cherco = {}
-				b_nymphaion = {}
-				b_chystopillia = {}
-				b_vosporo = {}
-				b_baherove = {}
-				b_zavitne = {}
-			}
-
-			c_theodosia = {
-				color = { 190 93 156 }
-				color2 = { 255 255 20 }
-
-				b_theodosia = {}
-				b_soldaia = {}
-				b_kimmerikon = {}
-				b_caffa = {}
-				b_caulita = {}
-				b_olyva = {}
-				b_lusta = {}
-				b_funan = {}
-			}
-
-			c_tmutarakan = {
-				color = { 196 99 162 }
-				color2 = { 255 255 20 }
-
-				b_tmutarakan = {}
-				b_mapa = {}
-				b_taman = {}
-				b_tumnev = {}
-				b_jevlisia = {}
-				b_sujukqale = {}
-				b_bata = {}
-				b_tsemes = {}
-			}
-		}
-
-		d_crimea = {
+		d_lukomorie = {
 			color = { 210 160 80 }
 			color2 = { 255 255 255 }
 
-			capital = 559 # Crimea
+			capital = 557 # Lukomorie
 
 			allow = {
 				can_create_duchy = yes
-			}
-
-			c_crimea = {
-				color = { 250 210 104 }
-				color2 = { 255 255 255 }
-
-				holy_site = tengri_pagan
-				holy_site = tengri_pagan_reformed
-
-				b_bakhchisaray = {}
-				b_aqmescit = {}
-				b_dzhankoy = {}
-				b_saq = {}
-				b_perekop = {}
-				b_qarasuvbazar = {}
-				b_kezlev = {}
-				b_qurman = {}
 			}
 
 			c_lower_dniepr = { # Tag inverted with c_oleshye

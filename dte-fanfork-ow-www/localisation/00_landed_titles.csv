@@ -14098,7 +14098,7 @@ c_bryansk_adj;Bryanskian;brianskienne;Brjanskisch;;Bryanskianés;;;;;;;;;x
 c_brycheiniog_adj;Brycheiner;brycheiniog;Brycheinisch;;bricheinés;;;;;x
 c_buchan_adj;Buchanian;buchanienne;Buchanisch;;Buchano;;;;;;;;;x
 c_builth_adj;Builther;builth;Builthisch;;builtés;;;;;x
-c_bukhara_adj;Bukharan;boukharane;Bucharisch;;Bukharanés;;;;;;;;;x
+c_bukhara_adj;Bukharan;boukharane;Bucharisch;;Bukharanés;;;;;;;;;xs
 c_bulgar_adj;Bulgarian;bulgare;Bulgarisch;;Búlgaro;;;;;;;;;x
 c_bumthang;Bumthang;Bumthang;Bumthang;;Bumthang;;;;;;;;;x
 c_bumthang_adj;Bumthangese;bumthang;Bumthangisch;;bumthangano;;;;;;;;;x
@@ -14110,6 +14110,8 @@ c_burhanpur_adj;Burhanpuran;burhanpurane;Burhanpuranisch;;;;;;;;;;;x
 c_burkhan_buudai_adj;Burkhani;burkhani;Burkhaniscj;;burjani;;;;;x
 c_burtasy_adj;Burtasyan;burtasyanne;Burtasisch;;Burtasyanés;;;;;;;;;x
 c_busaso_adj;Busasonian;busasoniane;Busasonisch;;Busasiano;;;;;;;;;x
+c_butovo;Butovo;;;;;;;;;;;;;x
+c_butovo_adj;Butovian;;;;;;;;;;;;;x
 c_buzachi_adj;Buzachian;buzachian;Buzachisch;;buzachí;;;;;x
 c_bytow_adj;Bytowian;bytowian;Bytowisch;;bitowiano;;;;;;;;;x
 c_byzantion_adj;Constantinopian;constantinopolitaine;Konstantinisch;;Constantinopolitano;;;;;;;;;x
@@ -14164,7 +14166,6 @@ c_chauragarh_adj;Chauragarh;chauragarh;Chauragarisch;;;;;;;;;;;x
 c_chelminskie_adj;Chelminskian;chelminskienne;Chelmnisch;;Chelminskianés;;;;;;;;;x
 c_cherchen_adj;Chercheni;cherchen;Cherchenisch;;cherchení;;;;;;;;;x
 c_chernigov_adj;Chernigovian;tchernigovienne;Tschernigowisch;;Chernigovianés;;;;;;;;;x
-c_cherson_adj;Chersonian;chersonienne;Chersonisch;;Quersoneso;;;;;;;;;x
 c_cherven_adj;Chervenian;chervenienne;Chervenisch;;chernivsita;;;;;;;;;x
 c_chester_adj;Chesterian;chesterienne;Chesterisch;;Chestiano;;;;;;;;;x
 c_chieti_adj;Teatino;teatino;Teatisch;;teatino;;;;;;;;;x
@@ -14208,7 +14209,6 @@ c_corsica_adj;Corsican;corse;Korsisch;;Corso;;;;;;;;;x
 c_coruna_adj;Coruñan;corognaise;Coruñisch;;Coruñés;;;;;;;;;x
 c_craiova_adj;Craiovan;craiovenne;Craiovanisch;;craiovense;;;;;;;;;x
 c_cremona_adj;Cremonian;crémonaise;Cremonisch;;Cremonense;;;;;;;;;x
-c_crimea_adj;Crimean;criméenne;Krimisch;;Crimeo;;;;;;;;;x
 c_csanad_adj;Csanadian;csanádienne;Csanadisch;;Cesanadianés;;;;;;;;;x
 c_cuenca_adj;Cuencan;cuencane;Cuencanisch;;Conquense;;;;;;;;;x
 c_cumberland_adj;Cumberlander;cumberlandaise;Cumberländisch;;Cumberlandiano;;;;;;;;;x
@@ -14733,7 +14733,6 @@ c_kondana_adj;Kondanan;kondanane;Kondananisch;;;;;;;;;;;x
 c_kongu;Kongu;;Kongu;;;;;;;;;;;x
 c_kongu_adj;Konguan;kongu;Kongunisch;;;;;;;;;;;x
 c_konjikala_adj;Konjikali;konjikala;Konjikalanisch;;;;;;;;;;;x
-c_korchev_adj;Korchevian;korchévienne;Kertschisch;;Korcheviano;;;;;;;;;x
 c_korinthos_adj;Korinthian;corinthienne;Korinthisch;;Corintio;;;;;;;;;x
 c_korosten_adj;Korostenian;korostenienne;Korostenisch;;korosteno;;;;;;;;;x
 c_korsun_adj;Korsunian;korsounienne;Korsunisch;;Korsunés;;;;;;;;;x
@@ -15319,6 +15318,8 @@ c_rajrappa_adj;Rajrappa;rajrappa;Rajrappanisch;;;;;;;;;;;x
 c_rama_adj;Solian;soli;Solian;;Solian;;;;;x
 c_ramagiri;Ramagiri;;;;;;;;;;;;;x
 c_ramagiri_adj;Ramagiri;ramagiri;Ramagiri;;;;;;;;;;;x
+c_ramenki;Ramenki;;;;;;;;;;;;;x
+c_ramenki_adj;Ramenkian;;;;;;;;;;;;;x
 c_ranikot;Ranikot;;Ranikot;;;;;;;;;;;x
 c_ranikot_adj;Ranikotan;ranikotane;Ranikotisch;;;;;;;;;;;x
 c_ranthambore;Ranthambore;;Ranthambore;;;;;;;;;;;x
@@ -15634,7 +15635,6 @@ c_thalner_adj;Thalner;thalner;Thalnerisch;;;;;;;;;;;x
 c_thana;Thana;;Thana;;;;;;;;;;;x
 c_thana_adj;Thanan;thana;Thananisch;;;;;;;;;;;x
 c_tharasset_adj;Sousian;sousian;Sousisch;;sousí;;;;;;;;;x
-c_theodosia_adj;Theodosian;théodosienne;Theodosisch;;Teodosiano;;;;;;;;;x
 c_theodosiopolis_adj;Theodosiopolite;théodosiopolitaine;Theodosiopolitisch;;Theodosiopolitano;;;;;;;;;x
 c_thessalia_adj;Thessalian;thessalienne;Thessalisch;;Tesalio;;;;;;;;;x
 c_thessalonike_adj;Thessalonikian;thessalonicienne;Thessalonikisch;;Tesalonicense;;;;;;;;;x
@@ -15696,6 +15696,8 @@ c_tripoli_adj;Tripolitanian;tripolitaine;Tripolitanisch;;Tripolitano;;;;;;;;;x
 c_tripolitana_adj;Tripolitanian;tripolitaine;Tripolitanisch;;Tripolitana;;;;;;;;;x
 c_tripuri;Tripuri;;Tripuri;;;;;;;;;;;x
 c_tripuri_adj;Tripuri;tripuri;Tripurisch;;;;;;;;;;;x
+c_troitsk;Troitsk;;;;;;;;;;;;;x
+c_troitsk_adj;Troitskian;;;;;;;;;;;;;x
 c_trondelag;Nidaros;Nidaros;Nidaros;;Nidaros;;;;;;;;;x
 c_trondelag_adj;Trondish;trøndoise;Trondelager;;Tronder;;;;;;;;;x
 c_troyes_adj;Troyesian;troyenne;Troyesisch;;Troyense;;;;;;;;;x
@@ -15918,6 +15920,8 @@ c_zahedan_adj;Zahedanian;zahedanienne;Zahedanisch;;Zahedaní;;;;;;;;;x
 c_zakynthos_adj;Zakynthian;zakynthian;Zakynthisch;;zacinto;;;;;x
 c_zamfara_adj;Zamfaran;zamfaran;Zamfarisch;;zamfara;;;;;;;;;x
 c_zamindawar_adj;Zamindawarian;zamindawar;Zamindawarisch;;;;;;;;;;;x
+c_zamkadie;Zamkadie;;;;;;;;;;;;;x
+c_zamkadie_adj;Zamkadian;;;;;;;;;;;;;x
 c_zamora_adj;Zamoran;zamorane;Zamoranisch;;Zamorano;;;;;;;;;x
 c_zanjan_abhar_adj;Zanjan-Abharian;zanjan-abhar;Zanjan-Abharisch;;;;;;;;;;;x
 c_zaozerye_adj;Zaozeryian;zaozeryienne;Zaozerjisch;;Zaozeryianés;;;;;;;;;x
@@ -16227,8 +16231,6 @@ d_cheremisa;Cheremisa;Tchéremisse;Tscheremiss;;Cheremisia;;;;;;;;;x
 d_cheremisa_adj;Cheremisan;tchéremisse;Tscheremissisch;;Mari;;;;;;;;;x
 d_chernigov;Chernigov;Tchernigov;Tschernigow;;Chernigov;;;;;;;;;x
 d_chernigov_adj;Chernigovan;tchernigovienne;Tschernigowisch;;Chernigovita;;;;;;;;;x
-d_cherson;Cherson;Cherson;Chersones;;Jersón;;;;;;;;;x
-d_cherson_adj;Chersonian;chersonienne;Chersonisch;;Jersonesa;;;;;;;;;x
 d_cherven_cities;Red Ruthenia;Ruthénie rouge;Rotruthenien;;Rutenia Roja;;;;;;;;;x
 d_cherven_cities_adj;Red Ruthenian;ruthène rouge;Rotruthenisch;;rutenio rojo;;;;;;;;;x
 d_chola_nadu;Chola Nadu;Chola Nadu;Chola Nadu;;;;;;;;;;;x
@@ -16255,8 +16257,8 @@ d_corsica;Corsica;Corse;Korsika;;Corsica;;;;;;;;;x
 d_corsica_adj;Corsican;corse;Korsisch;;Corso;;;;;;;;;x
 d_courland;Courland;Courlande;Kurland;;Curlandia;;;;;;;;;x
 d_courland_adj;Courlander;courlandaise;Kurländisch;;Curlandesa;;;;;;;;;x
-d_crimea;Crimea;Crimée;Krim;;Crimea;;;;;;;;;x
-d_crimea_adj;Crimean;criméenne;Krimisch;;Crimeana;;;;;;;;;x
+d_lukomorie;Lukomorie;;;;;;;;;;;;;x
+d_lukomorie_adj;Lukomorian;;;;;;;;;;;;;x
 d_croatia;Croatia;Croatie;Kroatien;;Croacia;;;;;;;;;x
 d_croatia_adj;Croatian;croate;Kroatisch;;Croata;;;;;;;;;x
 d_cuman_band;Cuman Band;Bande armée coumane;Cumanen-Trupp;;Banda Cumana;;;;;;;;;x
@@ -16848,6 +16850,8 @@ d_nagormo;Nagormo;Nagormo;Nagormo;;Nagormo;;;;;;;;;x
 d_nagormo_adj;Nagormo;nagormo;Nagormoisch;;Nagormo;;;;;;;;;x
 d_nangqen;Nangqen;Nangqen;Nangqen;;Nangqen;;;;;;;;;x
 d_nangqen_adj;Nangqen;nangqen;Nangqenisch;;Nangqen;;;;;;;;;x
+d_naro-fominsk;Naro-Fominsk;;;;;;;;;;;;;x
+d_naro-fominsk_adj;Naro-Fominskian;;;;;;;;;;;;;x
 d_nasikya;Nasikya;Nasikya;Nasikya;;;;;;;;;;;x
 d_nasikya_adj;Nasikyani;nasikya;Nasikyanisch;;nasikyaní;;;;;;;;;x
 d_navarra;Navarra;Navarre;Navarra;;Navarra;;;;;;;;;x
@@ -17281,6 +17285,8 @@ d_tigris;Tigris;Tigre;Tigris;;Tigris;;;;;;;;;x
 d_tigris_adj;Tigran;tigrane;Tigrisch;;Tigrisana;;;;;;;;;x
 d_timbuktu;Timbuktu;Tombouctou;Timbuktu;;Tombuctú;;;;;;;;;x
 d_timbuktu_adj;Timbuktuan;tombouctou;Timbuktuisch;;tombuctués;;;;;;;;;x
+d_tinao;Tinao;;;;;;;;;;;;;x
+d_tinao_adj;Tinate;;;;;;;;;;;;;x
 d_tioharad;Värend;Värend;;;;;;;;x
 d_tioharad_adj;Värender;värender;Värendisch;;varendés;;;;;x
 d_tirabhukti;Tirabhukti;Tirabhukti;Tirabhukti;;;;;;;;;;;x
@@ -17642,8 +17648,8 @@ k_castille;Castille;Castille;Kastilien;;Castilla;;;;;;;;;x
 k_castille_adj;Castilian;castillanne;Kastilisch;;Castellana;;;;;;;;;x
 k_chernigov;Chernigov;Tchernigov;Tscherngov;;Chernígov;;;;;;;;;x
 k_chernigov_adj;Chernigovian;tchernigovienne;Tscherngovisch;;chernigovita;;;;;;;;;x
-k_crimea;Crimea;Crimée;Krim;;Crimea;;;;;;;;;x
-k_crimea_adj;Crimean;criméenne;Krimtatarisch;;crimeo;;;;;;;;;x
+k_odessa;Odessa;;;;;;;;;;;;;x
+k_odessa_adj;Odessite;;;;;;;;;;;;;x
 k_croatia;Croatia;Croatie;Kroatien;;Croacia;;;;;;;;;x
 k_croatia_adj;Croatian;croate;Kroatisch;;Croata;;;;;;;;;x
 k_cuman;Cumania;Coumans;Kumanien;;Cumania;;;;;;;;;x
@@ -17764,6 +17770,8 @@ k_mongolia;Mongolia;Mongolie;Mongolei;;Mongolia;;;;;;;;;x
 k_mongolia_adj;Mongolian;mongole;Mongolisch;;Mongol;;;;;;;;;x
 k_moravia;Great Moravia;Grande Moravie;Großmähren;;Gran Moravia;;;;;;;;;x
 k_moravia_adj;Moravian;morave;Mährisch;;Moraviano;;;;;;;;;x
+k_moskva;Moskva;;;;;;;;;;;;;x
+k_moskva_adj;Muscovite;;;;;;;;;;;;;x
 k_naples;Naples;Naples;Neapel;;Nápoles;;;;;;;;;x
 k_naples_adj;Neapolitan;napolitaine;Neapolitanisch;;Napolitana;;;;;;;;;x
 k_navarra;Navarra;Navarre;Navarra;;Navarra;;;;;;;;;x
