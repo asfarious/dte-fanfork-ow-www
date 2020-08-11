@@ -12,3 +12,6 @@ culture = russian
 religion = orthodox
 
 # History
+1147.1.1 = {
+	b_khimki = castle   #Moscow city founded
+}
