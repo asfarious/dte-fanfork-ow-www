@@ -1943,7 +1943,7 @@ e_russia = {
 				color2 = { 255 255 255 }
 				
 				b_khimki = {}
-				b_mytischi = {}
+				b_mytishchi = {}
 				b_sergiyev_posad = {}
 				b_krasnogorsk = {}
 				b_podolsk = {}
