@@ -4,8 +4,15 @@
 title = c_ramenki
 
 # Settlements
-max_settlements = 1
-b_ramenki = tribal
+max_settlements = 7
+
+b_ramenki = castle
+b_fili = city
+b_mikhailovskoie = temple
+b_krylatskoie = castle
+b_kuntsevo = city
+b_gagarin = city
+b_ziuzino = city
 
 # Misc
 culture = russian

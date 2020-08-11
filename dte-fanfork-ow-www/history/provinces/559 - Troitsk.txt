@@ -4,8 +4,15 @@
 title = c_troitsk
 
 # Settlements
-max_settlements = 1
-b_troitsk = tribal
+max_settlements = 7
+
+b_troitsk = castle
+b_kievsky = city
+b_lms = temple
+b_krasnaia_pakhra = castle
+b_rogovo = castle
+b_klionovo = castle
+#b_shchapovo = castle
 
 
 # Misc
