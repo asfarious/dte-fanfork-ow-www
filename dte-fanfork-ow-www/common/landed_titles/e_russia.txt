@@ -1916,10 +1916,13 @@ e_russia = {
 #				mordvin = "Mochkava" # NO
 #				meshchera = "Mochkava" # NO
 
-				b_moskva = {
-#					mordvin = "Mochkava" # NO
-#					meshchera = "Mochkava" # NO
-				}
+				b_kremlin = {}
+				b_moskva-city = {}
+				b_pokrovsky = {}
+				b_lubianka = {}
+				b_arbat = {}
+				b_lefortovo = {}
+				b_kitai-gorod = {}
 
 			}
 			c_ramenki = {
@@ -1927,6 +1930,12 @@ e_russia = {
 				color2 = { 255 255 255 }
 				
 				b_ramenki = {}
+				b_fili = {}
+				b_mikhailovskoie = {}
+				b_krylatskoie = {}
+				b_kuntsevo = {}
+				b_gagarin = {}
+				b_ziuzino = {}
 			}
 			
 			c_zamkadie = {
@@ -1934,7 +1943,12 @@ e_russia = {
 				color2 = { 255 255 255 }
 				
 				b_khimki = {}
-				b_mytischi = {}
+				b_mytishchi = {}
+				b_sergiyev_posad = {}
+				b_krasnogorsk = {}
+				b_podolsk = {}
+				b_zelenograd = {}
+				b_lyubertsy = {} 
 			}
 		}
 		d_naro-fominsk = {
@@ -1951,12 +1965,12 @@ e_russia = {
 				color2 = { 255 255 255 }
 
 				b_naro-fominsk = {}
-#				b_lopasnya = {}
-#				b_klimovka = {}
-#				b_voronovo = {}
-#				b_kubinka = {}
-#				b_troitsk = {}
-#				b_chukovo = {}
+				b_lopasnya = {}
+				b_klimovka = {}
+				b_voronovo = {}
+				b_kubinka = {}
+				b_verea = {}
+				b_chukovo = {}
 			}
 			
 			c_mozhaysk = {
@@ -1988,6 +2002,13 @@ e_russia = {
 				color2 = {255 255 255}
 				
 				b_butovo = {}
+				b_shcherbinka = {}
+				b_mosrentgen = {}
+				b_moskosvky = {}
+				b_vnukovo = {}
+				b_kommunarka = {}
+				b_dubrovka = {}
+				
 			}
 			
 			c_troitsk = {
@@ -1995,6 +2016,13 @@ e_russia = {
 				color2 = {255 255 255}
 				
 				b_troitsk = {}
+				b_kievsky = {}
+				b_lms = {}
+				b_krasnaia_pakhra = {}
+				b_rogovo = {}
+				b_klionovo = {}
+				b_shchapovo = {}
+				
 			}
 		}
 	}

@@ -4,11 +4,21 @@
 title = c_butovo
 
 # Settlements
-max_settlements = 1
-b_butovo = tribe
+max_settlements = 7
+
+b_butovo = castle
+b_shcherbinka = city
+b_mosrentgen = temple
+b_moskosvky = castle
+b_vnukovo = castle
+b_kommunarka = temple
+b_dubrovka = city
 
 # Misc
 culture = culture
 religion = orthodox
 
 # History
+1150.1.1 = {
+	b_butovo = castle
+}

@@ -4,8 +4,15 @@
 title = c_zamkadie
 
 # Settlements
-max_settlements = 2
-b_khimki = tribe
+max_settlements = 7
+
+b_khimki = castle
+b_mytishchi = city
+b_sergiyev_posad = temple
+b_krasnogorsk = castle
+b_podolsk = city
+b_zelenograd = city
+b_lyubertsy = castle
 
 # Misc
 culture = russian
