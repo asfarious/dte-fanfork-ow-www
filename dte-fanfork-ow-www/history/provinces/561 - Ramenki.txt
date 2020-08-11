@@ -12,3 +12,6 @@ culture = russian
 religion = orthodox
 
 # History
+1200.1.1 = {
+	b_ramenki = castle
+}

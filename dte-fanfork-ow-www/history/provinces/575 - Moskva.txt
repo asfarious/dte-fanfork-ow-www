@@ -6,7 +6,7 @@ title = c_moskva
 # Settlements
 max_settlements = 4
 
-b_moskva = tribal	#1147
+b_kremlin = tribal	#1147
 
 culture = meshchera
 religion = finnish_pagan
@@ -16,8 +16,8 @@ religion = finnish_pagan
 	religion = orthodox
 }
 1147.1.1 = {
-	b_moskva = castle   #Moscow city founded
-	b_podolsk = city	#anachronistic but for some boost, yo
+	b_kremlin = castle   #Moscow city founded
+	b_moskva-city = city	#anachronistic but for some boost, yo
 }
 1200.1.1 = {
 	culture = russian
