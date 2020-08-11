@@ -2169,6 +2169,8 @@ b_busum;Büsum;;;;;;;;;x
 b_butera;Butera;Butera;Butera;;Butera;;;;;;;;;x
 b_buto;Buto;Buto;Buto;;Buto;;;;;;;;;x
 b_butovka;Butovka;;;;;;;;;x
+b_butovo;Butovo;;;;;;;;;;;;;x
+b_butovo_adj;Butovian;;;;;;;;;;;;;x
 b_butrint;Butrint;Buthrote;Butrint;;Butrint;;;;;;;;;x
 b_butsk;Butsk;;;;;;;;;;;;;x
 b_butuceni;Butuceni;;;;;;;;;;;;;x
@@ -3485,6 +3487,8 @@ b_dublin;Dublin;Dublin;Dublin;;Dublín;;;;;;;;;x
 b_dubno;Dubno;Doubno;Dubno;;Dubno;;;;;;;;;x
 b_dubovka;Dubovka;Dubovka;Dubowka;;Dubovka;;;;;;;;;x
 b_dubrovitsya;Dubrovitsya;Dubrovitsya;Dubrowitz;;Dubrovitsya;;;;;;;;;x
+b_dubrovka;Dubrovka;;;;;;;;;;;;;x
+b_dubrovka_adj;Dubrovkite;;;;;;;;;;;;;x
 b_dubrowna;Dubrowna;;;;;;;;;;;;;x
 b_dubyazy;Dubyazy;;;;;;;;;;;;;x
 b_duchcov;Duchcov;Duchcov;Duchcov;;Duchcov;;;;;;;;;x
@@ -6164,6 +6168,8 @@ b_kiehiman;Kiehiman;;;;;;;;;;;;;x
 b_kiel;Kiel;Kiel;Kiel;;Kiel;;;;;;;;;x
 b_kielce;Kielce;Kielce;Kielce;;Kielce;;;;;;;;;x
 b_kiev;Kiev;Kiev;Kiew;;Kiev;;;;;;;;;x
+b_kievsky;Kievsky;;;;;;;;;;;;;x
+b_kievsky_adj;Kievsky;;;;;;;;;;;;;x
 b_kiffa;Kiffa;Kiffa;Kiffa;;Kiffa;;;;;;;;;x
 b_kifri;Kifri;Kifri;Kifri;;Kifri;;;;;;;;;x
 b_kigi;Kigi;Kigi;Kigi;;Kigi;;;;;;;;;x
@@ -6290,6 +6296,8 @@ b_klimontow;Klimontow;Klimontow;Klimontow;;Klimontow;;;;;;;;;x
 b_klimovka;Klimovka;;;;;;;;;;;;;x
 b_klimovo;Klimovo;Klimovo;Klimowo;;Klimovo;;;;;;;;;x
 b_klin;Klin;Kline;Klin;;Klin;;;;;;;;;x
+b_klionovo;Klionovo;;;;;;;;;;;;;x
+b_klionovo_adj;Klionovite;;;;;;;;;;;;;x
 b_klis;Klis;Klis;Klis;;Klis;;;;;;;;;x
 b_kljuc;Kljuc;Kljuc;Kljuc;;Kljuc;;;;;;;;;x
 b_klochkovo;Klochkovo;;;;;;;;;x
@@ -6388,6 +6396,8 @@ b_kombolcha;Kombolcha;Kombolcha;Kombolcha;;Kombolcha;;;;;;;;;x
 b_komelshokafa;Komel-Shokafa;Komel-Shokafa;Komel-Shokafa;;Komel-Shokafa;;;;;;;;;x
 b_komishdepa;Komish Depa;Komish Depa;Komisch Depa;;Komish Depa;;;;;;;;;x
 b_kommunar;Kommunar;;;;;;;;;x
+b_kommunarka;Kommunarka;;;;;;;;;;;;;x
+b_kommunarka_adj;Kommunarkian;;;;;;;;;;;;;x
 b_komotini;Komotini;;;;;;;;;x
 b_komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;Komotit;x
 b_komstad;Komstad;;;;;;;;;x
@@ -6550,6 +6560,8 @@ b_kramatorsk;Kramatorsk;Kramatorsk;Kramatorsk;;Kramatorsk;;;;;;;;;x
 b_krapina;Krapina;Krapina;Krapina;;Krapina;;;;;;;;;x
 b_krasavino;Krasavino;Krassavino;Krasawino;;Krasavino;;;;;;;;;x
 b_kraslava;Kraslava;Kraslava;Kreslau;;Kraslava;;;;;;;;;x
+b_krasnaia_pakhra;Krasnaia Pakhra;;;;;;;;;;;;;x
+b_krasnaia_pakhra_adj;Krasnopakhrian;;;;;;;;;;;;;x
 b_krasnaya;Krasnaya;;;;;;;;;;;;;x
 b_krasne;Krasne;Krasne;Krasne;;Krasne;;;;;;;;;x
 b_krasnogorsk;Krasnogorsk;;;;;;;;;;;;;x
@@ -7221,6 +7233,8 @@ b_llanrhos;Llanhrhos;;Llanhrhos;;;;;;;x
 b_llanstadwell;Llanstadwell;;Llanstadwell;;;;;;;x
 b_llanwrtyd;Llanwrtyd;;Llanwrtyd;;;;;;;x
 b_lleida;Lleida;Lérida;Lleida;;Lérida;;;;;;;;;x
+b_lms;Elemes;;;;;;;;;;;;;x
+b_lms_adj;Elemesian;;;;;;;;;;;;;x
 b_lo;Lo;Lo;Lo;;Lo;;;;;;;;;x
 b_loarre;Loarre;Loarre;Loarre;;Loarre;;;;;;;;;x
 b_lobau;Lobau;Lobau;Lobau;;Lobau;;;;;;;;;x
@@ -8237,10 +8251,14 @@ b_mosa;Mosa;;;;;;;;;;;;;x
 b_mosalsk;Mosalsk;;;;;;;;;;;;;x
 b_mosas;Mosås;Mosås;Mosås;;Mosås;;;;;;;;;x
 b_mosjoen;Mosjøen;Mosjøen;Mosjøen;;Mosjoen;;;;;;;;;x
+b_moskosvky;Moskovsky;;;;;;;;;;;;;x
+b_moskosvky_adj;Moskovsky;;;;;;;;;;;;;x
 b_moskva-city;Moskva-City;;;;;;;;;;;;;x
 b_moskva-city_adj;Moskva-City;;;;;;;;;;;;;x
 b_moskva;Moskva;Moscou;Moskau;;Moskva;;;;;;;;;x
 b_mospyne;Mospyne;Mospyne;Mospyne;;Mospyne;;;;;;;;;x
+b_mosrentgen;Mosrentgen;;;;;;;;;;;;;x
+b_mosrentgen_adj;Mosrentgen;;;;;;;;;;;;;x
 b_moss;Moss;;;;;;;;;x
 b_mostaganem;Mostaganem;Mostaganem;Mostaganem;;Mostagán;;;;;;;;;x
 b_mostar;Mostar;Mostar;Mostar;;Mostar;;;;;;;;;x
@@ -10137,6 +10155,8 @@ b_rodven;Rødven;;;;;;;;;x
 b_roermond;Roermond;Ruremonde;Roermond;;Roermond;;;;;;;;;x
 b_roeselare;Roeselare;Roulers;Roeselare;;Roeselare;;;;;;;;;x
 b_rogoi;Rogoi;Rogoi;Rogoi;;Rogoi;;;;;;;;;x
+b_rogovo;Rogovo;;;;;;;;;;;;;x
+b_rogovo_adj;Rogovite;;;;;;;;;;;;;x
 b_rogozhi;Rogozhi;Rogozhi;Rogoschi;;Rogozhi;;;;;;;;;x
 b_rogozhyn;Rogozhyn;;;;;;;;;;;;;x
 b_roha;Roha;Roha;Roha;;Roha;;;;;;;;;x
@@ -10924,8 +10944,12 @@ b_shaulder;Shaulder;;Shaulder;;;;;;;;;;;x
 b_shawan;Shawan;;;;;;;;;x
 b_shawwaf;Shawwaf;;Shawwaf;;;;;;;;;;;x
 b_shayzar;Shayzar;Shayzar;Shayzar;;Shayzar;;;;;;;;;x
+b_shchapovo;Shchapovo;;;;;;;;;;;;;x
+b_shchapovo_adj;Shchapovite;;;;;;;;;;;;;x
 b_shchelino;Shchelino;;;;;;;;;x
 b_shchell;Shchell;;;;;;;;;x
+b_shcherbinka;Shcherbinka;;;;;;;;;;;;;x
+b_shcherbinka_adj;Shcherbinkite;;;;;;;;;;;;;x
 b_shcheremenski;Scheremenski;Scheremenski;Scheremenski;;Scheremenski;;;;;;;;;x
 b_shchuchyn;Shchuchyn;;;;;;;;;;;;;x
 b_sheffield;Sheffield;;Sheffield;;;;;;;x
@@ -13068,6 +13092,8 @@ b_vladimir;Vladimir;Vladimir;Wladimir;;Vladimir;;;;;;;;;x
 b_vladimirvolynsky;Vladimir Volynsky;Vladimir-Volynski;Wolodymyr-Wolynskyj;;Vladimir Volynsky;;;;;;;;;x
 b_vlanga;Vlanga;Vlanga;Vlanga;;Vlanga;;;;;;;;;x
 b_vlissingen;Vlissingen;Vlissingen;Vlissingen;;Flesinga;;;;;;;;;x
+b_vnukovo;Vnukovo;;;;;;;;;;;;;x
+b_vnukovo_adj;Vnukovo;;;;;;;;;;;;;x
 b_vodamayutja;Vodamayutja;;Vodamayutja;;;;;;;;;;;x
 b_voden;Voden;Vodina;Voden;;Voden;;;;;;;;;x
 b_vodita;Vodita;;;;;;;;;;;;;x

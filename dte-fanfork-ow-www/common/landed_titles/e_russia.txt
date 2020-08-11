@@ -2002,6 +2002,12 @@ e_russia = {
 				color2 = {255 255 255}
 				
 				b_butovo = {}
+				b_shcherbinka = {}
+				b_mosrentgen = {}
+				b_moskosvky = {}
+				b_vnukovo = {}
+				b_kommunarka = {}
+				b_dubrovka = {}
 				
 			}
 			
@@ -2010,6 +2016,13 @@ e_russia = {
 				color2 = {255 255 255}
 				
 				b_troitsk = {}
+				b_kievsky = {}
+				b_lms = {}
+				b_krasnaia_pakhra = {}
+				b_rogovo = {}
+				b_klionovo = {}
+				b_shchapovo = {}
+				
 			}
 		}
 	}
